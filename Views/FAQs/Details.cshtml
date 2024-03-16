@@ -1,0 +1,19 @@
+﻿@model TN_Treasury_Web_Portal.Models.FAQ
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+<h1>@Html.DisplayFor(model => model.Question)</h1>
+
+
+    <hr />
+    <h4>@Html.DisplayFor(model => model.Answer)</h4>
+    
+    
+</div>
+<div>
+   
+    <a asp-action="Index">Go Back</a>
+</div>
