@@ -3,17 +3,72 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Retire Web Portal</h1>
-    <a asp-area="" asp-controller="FAQs" asp-action="Index">FAQ</a> <br>
-    <a asp-area="" asp-controller="Home" asp-action="Index">Documents</a>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+    <br>
+    <h1 class="display-4">Retire Web Portal Dashboard</h1>
+    <br>
+    <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col">
+                <a asp-area="" asp-controller="Faqs" asp-action="Index" class="card-link" style="text-decoration: none;">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <i class="bi-question-square" style="font-size: 7em;"></i>
+                        </div>
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">FAQ</h5>
+                            <p class="card-text">View, Edit, and Create FAQs</p>
+                        </div>
+                        </div>
+                </a>
+            </div>
+            <div class="col">
+
+                <a asp-area="" asp-controller="Guides" asp-action="Index" class="card-link" style="text-decoration: none;">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <i class="bi-journals" style="font-size: 7em;"></i>
+                        </div>
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Guides</h5>
+                            <p class="card-text">View, Edit, and Create Guides</p>
+                        </div>
+                        </div>
+                </a>
+            </div>
+
+
+
+
+            <div class="col">
+                <a asp-area="" asp-controller="Documents" asp-action="Index" class="card-link" style="text-decoration: none;">
+                    <div class="card">
+                        <div class="card-img-top">
+                            <i class="bi-file-earmark" style="font-size: 7em;"></i>
+                        </div>
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">Documents</h5>
+                            <p class="card-text">Upload and View Documents</p>
+                        </div>
+                        </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </div>
