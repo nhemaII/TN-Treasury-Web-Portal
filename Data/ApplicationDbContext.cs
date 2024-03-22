@@ -15,5 +15,9 @@ namespace TN_Treasury_Web_Portal.Data
         }
 
         public DbSet<TN_Treasury_Web_Portal.Models.FAQ> FAQ { get; set; } = default!;
+
+        public DbSet<TN_Treasury_Web_Portal.Models.Guide>? Guide { get; set; }
+
+        public DbSet<TN_Treasury_Web_Portal.Models.GuideSection>? GuideSection { get; set; }
     }
 }
