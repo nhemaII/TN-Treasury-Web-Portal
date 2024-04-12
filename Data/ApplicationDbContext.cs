@@ -20,8 +20,10 @@ namespace TN_Treasury_Web_Portal.Data
 
         public DbSet<TN_Treasury_Web_Portal.Models.GuideSection>? GuideSection { get; set; }
 
+
         public DbSet<TN_Treasury_Web_Portal.Models.Document>? Document { get; set; }
         
+
 
     }
 }
