@@ -8,8 +8,11 @@
 
 <p>
     <a asp-action="Manage">Manage</a>
-
 </p>
+
+<input type="text" id="searchInput" placeholder="Search for questions..">
+<button type="button" onclick="searchQuestions()">Search</button>
+
 <table class="table">
     <thead>
         <tr>
@@ -23,20 +26,42 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Question)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Answer)
-            </td>
-            <td>
-                
-                <a asp-action="Details" asp-route-id="@item.Id">Expand</a> 
-                
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr class="faq-question">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Question)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Answer)
+                </td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.Id">Expand</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@section scripts {
+    <script>
+        function searchQuestions() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.querySelector(".table");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+}
