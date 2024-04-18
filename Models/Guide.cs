@@ -9,6 +9,6 @@
 
         public string Description { get; set; }
 
-        public ICollection<Guide> Guides { get; set; } = new List<Guide>();
+        
     }
 }
