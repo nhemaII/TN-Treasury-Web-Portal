@@ -88,9 +88,43 @@ namespace TN_Treasury_Web_Portal.Controllers
 
 
 
+        [HttpPost]
+        public async Task<IActionResult> Delete(int id)
+        {
+          
+                var document = await _context.Document.FindAsync(id);
 
-   
+                if (document == null)
+                {
+                    return NotFound();
+                }
 
-     
+
+                if (!string.IsNullOrEmpty(document.FilePath)) 
+                {
+                    try
+                    {
+                    string uploadDir = Path.Combine(_environment.WebRootPath, "Uploads");
+                    string filePath = Path.Combine(uploadDir, document.FileName);
+
+                    System.IO.File.Delete(filePath);  
+
+                    }
+                    catch (Exception ex)
+                    {
+                    return StatusCode(500, $"An error occurred while deleting the file: {ex.Message}");
+                }
+                }
+
+                _context.Document.Remove(document);
+                await _context.SaveChangesAsync();
+          
+
+            return RedirectToAction("Index");   
+        }
+
+
+
+
     }
 }
