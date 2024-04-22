@@ -1,5 +1,8 @@
 # TN Treasury Web Portal
 
+## Download Project
+Clone or open the project in Visual Studio 2022
+
 
 ## Set Up Database
 Open the Package Manager Console 
