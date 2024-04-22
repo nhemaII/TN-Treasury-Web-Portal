@@ -15,8 +15,16 @@ html {
 
 body {
   margin-bottom: 60px;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .bg-navbar {
     background-color: blue;
 }
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
